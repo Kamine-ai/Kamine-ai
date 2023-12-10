@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        header {
+            background-color: #120c3d;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #127ee9;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: rgb(246, 244, 245);
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #0c4d1d;
+            color: rgb(235, 6, 6);
+        }
+
+        .main {
+            padding: 30px;
+        }
+
+        footer {
+            background-color: #7c056e;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #feedbackForm {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Test Name</h1>
+    </header>
+
+    <div class="navbar">
+        <a href="#" onclick="loadPage('home')">Home</a>
+        <a href="#" onclick="loadPage('services')">Services</a>
+        <a href="#" onclick="loadPage('about')">About</a>
+        <a href="#" onclick="loadPage('contact')">Contact</a>
+    </div>
+
+    <div class="main">
+        <iframe id="home" src="https://www.example.com/home" style="width:100%;height:500px"></iframe>
+        <iframe id="services" src="https://www.example.com/services" style="width:100%;height:500px"></iframe>
+        <iframe id="about" src="https://www.example.com/about" style="width:100%;height:500px"></iframe>
+        <iframe id="contact" src="https://www.example.com/contact" style="width:100%;height:500px"></iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2022 KAMiNE. All rights reserved.</p>
+        <button onclick="toggleFeedbackForm()">Submit Feedback</button>
+        <div id="feedbackForm">
+            <h2>Submit Feedback</h2>
+            <iframe id="hubspot-form" src="https://app.hubspot.com/your-feedback-form-url" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </footer>
+
+    <script>
+        function loadPage(page) {
+            var i, iframes, home;
+            iframes = document.getElementsByTagname("iframe");
+            for (i = 0; i < iframes.length; i++) {
+                iframes[i].style.display = "none";
+            }
+            document.getElementById(page).style.display = "block";
+        }
+
+        function toggleFeedbackForm() {
+            var feedbackForm = document.getElementById("feedbackForm");
+            if (feedbackForm.style.display === "none") {
+                feedbackForm.style.display = "block";
+            } else {
+                feedbackForm.style.display = "none";
+            }
+        }
+            <script/>
+    <body/>
